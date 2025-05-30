@@ -23,6 +23,15 @@ function canDrive(name, age) {
         return "".concat(name, " is old enough to drive");
     return "".concat(name, " is not old enough to drive");
 }
+// Challenge 6: Largest number
+function getLargest(num1, num2, num3) {
+    var largest = num1;
+    if (num2 >= num1 && num2 >= num3)
+        largest = num2;
+    else if (num3 >= num1 && num3 >= num2)
+        largest = num3;
+    return largest;
+}
 /* Testing Bay - testing my code */
 console.log("Test for addition of Two numbers");
 console.log(addition(-3, 7)); // 4
@@ -43,3 +52,7 @@ console.log("\n  Test for checking whether user is old enough to drive");
 console.log(canDrive("Jamoh", 32)); // 'Jamoh is old enough to drive'
 console.log(canDrive("Puruh", 17)); // 'Puruh is not old enough to drive'
 console.log(canDrive("Mwihaki", 18)); // 'Mwihaki is not old enough to drive'
+console.log("\n  Test to find Largest Number among three numbers");
+console.log(getLargest(1, 2, 3)); // 2
+console.log(getLargest(-1, -22, -4)); // -1
+console.log(getLargest(22, 23, 23)); // 23
