@@ -37,6 +37,16 @@ function getLargest(num1: number, num2: number, num3: number): number {
   return largest;
 }
 
+// Challenge 7: BMI Calculator
+function CalculateBMI(weightInKG: number, height: number): string {
+  const BMI = weightInKG / (height * height);
+
+  if (BMI < 18.5) return `Your BMI is ${BMI} - Underweight`;
+  if (BMI >= 18.5 && BMI < 25) return `Your BMI is ${BMI} - Normal Weight`;
+  if (BMI >= 25 && BMI < 30) return `Your BMI is ${BMI} - Overweight`;
+  return `Your BMI is ${BMI} - Obese`;
+}
+
 /* Testing Bay - testing my code */
 console.log("Test for addition of Two numbers");
 console.log(addition(-3, 7)); // 4
@@ -66,3 +76,8 @@ console.log("\n  Test to find Largest Number among three numbers");
 console.log(getLargest(1, 2, 3)); // 2
 console.log(getLargest(-1, -22, -4)); // -1
 console.log(getLargest(22, 23, 23)); // 23
+
+console.log("\n  Test for BMI calculate");
+console.log(CalculateBMI(76, 1.5)); // 'Your BMI is 33.7 - Obese'
+console.log(CalculateBMI(70, 1.9)); // 'Your BMI is 19.3 - Normal Weight'
+console.log(CalculateBMI(46, 1.6)); // 'Your BMI is 17.9 - Underweight'
