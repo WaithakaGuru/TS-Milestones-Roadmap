@@ -1,27 +1,41 @@
 // Challenge 1: Sum of Two Numbers
-function addition(num1: number, num2: number) : number{
-    return  num1 + num2;
+function addition(num1: number, num2: number): number {
+  return num1 + num2;
 }
 
 // Challenge 2: Convert minutes into seconds
-function convertMinToSecs(numberOfMinutes: number) : number{
-    return numberOfMinutes * 60;
+function convertMinToSecs(numberOfMinutes: number): number {
+  return numberOfMinutes * 60;
 }
 
 // Challenge 3: Find Perimeter of a Rectangle
-function findRectanglePerimeter(length: number, width: number){
-    // No negative length or width
-    if(length > 0 && width > 0) return 2*length + 2*width;
-    return "Length / Width of a shape cannot be negative";
+function findRectanglePerimeter(length: number, width: number) {
+  // No negative length or width
+  if (length > 0 && width > 0) return 2 * length + 2 * width;
+  return "Length / Width of a shape cannot be negative";
+}
+
+// Challenge 4: Check Negative
+function isNegative(num: number) {
+  return num < 0;
 }
 
 /* Testing Bay - testing my code */
 console.log("Test for addition of Two numbers");
 console.log(addition(-3, 7)); // 4
 console.log(addition(45, 71)); // 116
-console.log(addition(-21, -13)); // - 34 
+console.log(addition(-21, -13)); // - 34
 
 console.log("\n  Test for Coversion of Minutes to Seconds");
 console.log(convertMinToSecs(72)); // 4320
 console.log(convertMinToSecs(12)); // 720
-console.log(convertMinToSecs(.5)); // 30
+console.log(convertMinToSecs(0.5)); // 30
+
+console.log("\n Test for finding Rectangle's Perimeter");
+console.log(findRectanglePerimeter(9,6)); // 30
+console.log(findRectanglePerimeter(12,7)); // 38
+console.log(findRectanglePerimeter(-3, 5)); // 'Length / Width of a shape cannot be negative'
+
+console.log("\n  Test for checking whether a number is negative");
+console.log(isNegative(12)); // false
+console.log(isNegative(-3)); // true
