@@ -47,6 +47,18 @@ function CalculateBMI(weightInKG: number, height: number): string {
   return `Your BMI is ${BMI} - Obese`;
 }
 
+// Challenge 8: Greeting Based on Time
+function greetUser(userName: string, hour: number): string {
+  let greeting: string = "";
+  if (hour >= 5 && hour <= 11) greeting = "Good morning";
+  else if (hour >= 12 && hour <= 17) greeting = "Good afternoon";
+  else if (hour >= 18 && hour <= 21) greeting = "Good evening";
+  else if ((hour >= 22 && hour <= 23) || (hour >= 0 && hour <= 4))
+    greeting = "Good night";
+  else return "Invalid hour value";
+  return `${greeting}, ${userName}`;
+}
+
 /* Testing Bay - testing my code */
 console.log("Test for addition of Two numbers");
 console.log(addition(-3, 7)); // 4
@@ -81,3 +93,7 @@ console.log("\n  Test for BMI calculate");
 console.log(CalculateBMI(76, 1.5)); // 'Your BMI is 33.7 - Obese'
 console.log(CalculateBMI(70, 1.9)); // 'Your BMI is 19.3 - Normal Weight'
 console.log(CalculateBMI(46, 1.6)); // 'Your BMI is 17.9 - Underweight'
+
+console.log("\n  Test for Greeting User Based on Time");
+console.log(greetUser("Joy", 23)); // 'Good night, Joy'
+console.log(greetUser("Joy", 25)); // Invalid hour value'
