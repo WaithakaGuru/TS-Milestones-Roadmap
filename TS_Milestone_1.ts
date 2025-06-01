@@ -107,7 +107,7 @@ function sumMultiples(n: number, divisor: number): number {
 }
 
 // Challenge 15: Sum of Digits
-function sumDigits(n: number) : number {
+function sumDigits(n: number): number {
   let sum: number = 0,
     remainder: number = n;
   while (remainder > 0) {
