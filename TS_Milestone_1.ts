@@ -89,6 +89,16 @@ function powerUp(num: number, times: number): number {
   return num;
 }
 
+// Challenge 13: Factorial calculator
+function factorial(n: number): number {
+  let result: number = 1;
+  if (n >= 0) {
+    for (let p: number = 1; p <= n; p++) result *= p;
+    return result;
+  }
+  return -1;
+}
+
 /* Testing Bay - testing my code */
 console.log("Test for addition of Two numbers");
 console.log(addition(-3, 7)); // 4
@@ -143,7 +153,12 @@ console.log(sumEvenNumbers(10)); // 30
 console.log(sumEvenNumbers(9)); // 20
 console.log(sumEvenNumbers(111)); // 3080
 
-console.log("\n  Teest for raising a num to power of n times");
+console.log("\n  Test for raising a num to power of n times");
 console.log(powerUp(3, 2)); // 9
 console.log(powerUp(5, 4)); // 625
 console.log(powerUp(2, 0)); // 1
+
+console.log("\n  Test for Factorial Calculator");
+console.log(factorial(1)); // 1
+console.log(factorial(0)); //
+console.log(factorial(6)); //
