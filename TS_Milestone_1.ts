@@ -106,6 +106,19 @@ function sumMultiples(n: number, divisor: number): number {
   return sum;
 }
 
+// Challenge 15: Sum of Digits
+function sumDigits(n: number) : number {
+  let sum: number = 0,
+    remainder: number = n;
+  while (remainder > 0) {
+    let currentNumber: number = remainder % 10;
+    sum += currentNumber;
+    remainder = (n - currentNumber) / 10;
+    n = remainder;
+  }
+  return sum;
+}
+
 /* Testing Bay - testing my code */
 console.log("Test for addition of Two numbers");
 console.log(addition(-3, 7)); // 4
@@ -176,3 +189,8 @@ console.log(
 console.log(sumMultiples(15, 3)); // 45
 console.log(sumMultiples(8, 5)); // 5
 console.log(sumMultiples(4, 1)); // 10
+
+console.log("\n  Test to get Sum of Digits of a number");
+console.log(sumDigits(305)); // 8
+console.log(sumDigits(123)); // 6
+console.log(sumDigits(5689)); // 28
