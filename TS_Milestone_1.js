@@ -67,6 +67,13 @@ function sumEvenNumbers(n) {
   for (var i = 1; i <= n; i++) sum += i % 2 === 0 ? i : 0;
   return sum;
 }
+// Challenge 12: Multiply by Itself
+function powerUp(num, times) {
+  if (num === 0 || times === 0) return 1;
+  var originalNumValue = num;
+  for (var i = times; i > 1; i--) num *= originalNumValue;
+  return num;
+}
 /* Testing Bay - testing my code */
 console.log("Test for addition of Two numbers");
 console.log(addition(-3, 7)); // 4
@@ -110,3 +117,7 @@ console.log("\n  Test for Summing all even numbers from 1 to number, n.");
 console.log(sumEvenNumbers(10)); // 30
 console.log(sumEvenNumbers(9)); // 20
 console.log(sumEvenNumbers(111)); // 3080
+console.log("\n  Teest for raising a num to power of n times");
+console.log(powerUp(3, 2)); // 9
+console.log(powerUp(5, 4)); // 625
+console.log(powerUp(2, 0)); // 1

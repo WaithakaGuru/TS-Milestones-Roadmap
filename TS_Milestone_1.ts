@@ -75,10 +75,18 @@ function findPerimeterOfShape(shape: string, len: number): number {
 }
 
 // Challenge 11: Sum of Even Numbers
-function sumEvenNumbers(n: number) {
+function sumEvenNumbers(n: number): number {
   let sum: number = 0;
   for (let i: number = 1; i <= n; i++) sum += i % 2 === 0 ? i : 0;
   return sum;
+}
+
+// Challenge 12: Multiply by Itself
+function powerUp(num: number, times: number): number {
+  if (num === 0 || times === 0) return 1;
+  let originalNumValue: number = num;
+  for (let i: number = times; i > 1; i--) num *= originalNumValue;
+  return num;
 }
 
 /* Testing Bay - testing my code */
@@ -134,3 +142,8 @@ console.log("\n  Test for Summing all even numbers from 1 to number, n.");
 console.log(sumEvenNumbers(10)); // 30
 console.log(sumEvenNumbers(9)); // 20
 console.log(sumEvenNumbers(111)); // 3080
+
+console.log("\n  Teest for raising a num to power of n times");
+console.log(powerUp(3, 2)); // 9
+console.log(powerUp(5, 4)); // 625
+console.log(powerUp(2, 0)); // 1
