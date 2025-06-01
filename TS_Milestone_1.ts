@@ -99,6 +99,13 @@ function factorial(n: number): number {
   return -1;
 }
 
+// Challenge 14: Multiple Sum
+function sumMultiples(n: number, divisor: number): number {
+  let sum: number = 0;
+  for (let p: number = 1; p <= n; p++) if (p % divisor === 0) sum += p;
+  return sum;
+}
+
 /* Testing Bay - testing my code */
 console.log("Test for addition of Two numbers");
 console.log(addition(-3, 7)); // 4
@@ -162,3 +169,10 @@ console.log("\n  Test for Factorial Calculator");
 console.log(factorial(1)); // 1
 console.log(factorial(0)); //
 console.log(factorial(6)); //
+
+console.log(
+  "\n  Test for summing nums in range 1 - n that are divisible by a given divisor",
+);
+console.log(sumMultiples(15, 3)); // 45
+console.log(sumMultiples(8, 5)); // 5
+console.log(sumMultiples(4, 1)); // 10
