@@ -39,7 +39,7 @@ function getLargest(num1: number, num2: number, num3: number): number {
 
 // Challenge 7: BMI Calculator
 function CalculateBMI(weightInKG: number, height: number): string {
-  const BMI = weightInKG / (height * height);
+  const BMI: number = weightInKG / (height * height);
 
   if (BMI < 18.5) return `Your BMI is ${BMI} - Underweight`;
   if (BMI >= 18.5 && BMI < 25) return `Your BMI is ${BMI} - Normal Weight`;
@@ -65,6 +65,13 @@ function FizzBuzzCheck(num: number): string {
   if (num % 3 === 0) return "Fizz";
   if (num % 5 === 0) return "Buzz";
   return `${num}`;
+}
+
+// Challenge 10: Perimeter 2
+function findPerimeterOfShape(shape: string, len: number): number {
+  if (shape.toLowerCase() === "s") return len * 4;
+  if (shape.toLowerCase() === "c") return 6.28 * len;
+  return -1; // error code: in case shape is not 'c' or 's'
 }
 
 /* Testing Bay - testing my code */
@@ -111,3 +118,7 @@ console.log(FizzBuzzCheck(6)); // Fizz
 console.log(FizzBuzzCheck(7)); // '7'
 console.log(FizzBuzzCheck(30)); // FizzBuzz
 console.log(FizzBuzzCheck(25)); // Buzz
+
+console.log("\n  Test for finding perimeter of either Square or Circle");
+console.log(findPerimeterOfShape("s", 14)); // 56
+console.log(findPerimeterOfShape("c", 7)); // 43.96

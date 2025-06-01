@@ -55,6 +55,12 @@ function FizzBuzzCheck(num) {
   if (num % 5 === 0) return "Buzz";
   return "".concat(num);
 }
+// Challenge 10: Perimeter 2
+function findPerimeterOfShape(shape, len) {
+  if (shape.toLowerCase() === "s") return len * 4;
+  if (shape.toLowerCase() === "c") return 6.28 * len;
+  return -1; // error code: in case shape is not 'c' or 's'
+}
 /* Testing Bay - testing my code */
 console.log("Test for addition of Two numbers");
 console.log(addition(-3, 7)); // 4
@@ -91,3 +97,6 @@ console.log(FizzBuzzCheck(6)); // Fizz
 console.log(FizzBuzzCheck(7)); // '7'
 console.log(FizzBuzzCheck(30)); // FizzBuzz
 console.log(FizzBuzzCheck(25)); // Buzz
+console.log("\n  Test for finding perimeter of either Square or Circle");
+console.log(findPerimeterOfShape("s", 14)); // 56
+console.log(findPerimeterOfShape("c", 7)); // 43.96
