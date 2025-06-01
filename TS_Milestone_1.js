@@ -61,6 +61,12 @@ function findPerimeterOfShape(shape, len) {
   if (shape.toLowerCase() === "c") return 6.28 * len;
   return -1; // error code: in case shape is not 'c' or 's'
 }
+// Challenge 11: Sum of Even Numbers
+function sumEvenNumbers(n) {
+  var sum = 0;
+  for (var i = 1; i <= n; i++) sum += i % 2 === 0 ? i : 0;
+  return sum;
+}
 /* Testing Bay - testing my code */
 console.log("Test for addition of Two numbers");
 console.log(addition(-3, 7)); // 4
@@ -100,3 +106,7 @@ console.log(FizzBuzzCheck(25)); // Buzz
 console.log("\n  Test for finding perimeter of either Square or Circle");
 console.log(findPerimeterOfShape("s", 14)); // 56
 console.log(findPerimeterOfShape("c", 7)); // 43.96
+console.log("\n  Test for Summing all even numbers from 1 to number, n.");
+console.log(sumEvenNumbers(10)); // 30
+console.log(sumEvenNumbers(9)); // 20
+console.log(sumEvenNumbers(111)); // 3080
