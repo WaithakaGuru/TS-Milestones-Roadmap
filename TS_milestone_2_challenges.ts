@@ -50,6 +50,15 @@ function countProperties(obj: Object): number {
   return count;
 }
 
+// Challenge 6: Filter by Length
+function filterByLength(wordArray: string[], minLength: number): string[] {
+  let requiredWords: string[] = [];
+  for (const word of wordArray) {
+    if (word.length >= minLength) requiredWords.push(word);
+  }
+  return requiredWords;
+}
+
 /* Testing Bay - see!!it works */
 console.log(
   "  Test for Summing the positive numbers only in an array of numbers",
@@ -86,3 +95,9 @@ console.log(findLongestWord(["apple", "banana", "pear", "grapefruit"])); // grap
 
 console.log("\n  Test for counting properties in an object");
 console.log(countProperties({ name: "Alice", age: 25, city: "Paris" })); // 3
+
+console.log(
+  "\n  Test for Filtering words from an array if they don't attain the minLength",
+);
+console.log(filterByLength(["cat", "giraffe", "hippo", "dog", "elephant"], 5)); // [ 'giraffe', 'hippo', 'elephant' ]
+console.log(filterByLength(["cat", "giraffe", "hippo", "dog", "elephant"], 4)); // [ 'giraffe', 'hippo', 'elephant' ]
