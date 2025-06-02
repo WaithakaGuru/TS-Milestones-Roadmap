@@ -43,6 +43,13 @@ function findLongestWord(wordArray: string[]): string {
   return longest;
 }
 
+// Challenge 5: Count Properties
+function countProperties(obj: Object): number {
+  let count: number = 0;
+  for (const item in obj) count++;
+  return count;
+}
+
 /* Testing Bay - see!!it works */
 console.log(
   "  Test for Summing the positive numbers only in an array of numbers",
@@ -76,3 +83,6 @@ console.log(
 
 console.log("\n  Test for finding longest word in an array of words");
 console.log(findLongestWord(["apple", "banana", "pear", "grapefruit"])); // grapefruit
+
+console.log("\n  Test for counting properties in an object");
+console.log(countProperties({ name: "Alice", age: 25, city: "Paris" })); // 3
