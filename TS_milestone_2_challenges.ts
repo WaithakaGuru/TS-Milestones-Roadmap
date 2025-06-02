@@ -78,11 +78,11 @@ function differenceEvenOdd(numArray: number[]): number {
   return difference;
 }
 
-// Challenge 9: Count Truthy 
-function countTruthy(obj: Object) : number {
-  let truthyValuesCount : number = 0;
-  for(const item of Object.values(obj)){
-    if(item) truthyValuesCount ++;
+// Challenge 9: Count Truthy
+function countTruthy(obj: Object): number {
+  let truthyValuesCount: number = 0;
+  for (const item of Object.values(obj)) {
+    if (item) truthyValuesCount++;
   }
   return truthyValuesCount;
 }
@@ -106,7 +106,10 @@ function findAvg(numArray: number[]): number {
 }
 
 // Challenge 11: Linear Search
-function linearSearch(arr: number[] | string[], target: number | string): number {
+function linearSearch(
+  arr: number[] | string[],
+  target: number | string,
+): number {
   for (let i = 0; i < arr.length; i++) {
     if (arr[i] === target) return i;
   }
@@ -114,7 +117,10 @@ function linearSearch(arr: number[] | string[], target: number | string): number
 }
 
 // Challenge 12: Reverse Linear Search
-function reverseLinearSearch(arr: number[] | string[], target: number | string): number {
+function reverseLinearSearch(
+  arr: number[] | string[],
+  target: number | string,
+): number {
   for (let i = arr.length - 1; i >= 0; i--) {
     if (arr[i] === target) return i;
   }
@@ -122,7 +128,10 @@ function reverseLinearSearch(arr: number[] | string[], target: number | string):
 }
 
 // Challenge 13: Linear Search All Indices
-function linearSearchAll(arr: (number | string)[], target: number | string): number[] {
+function linearSearchAll(
+  arr: (number | string)[],
+  target: number | string,
+): number[] {
   const foundAt: number[] = [];
   for (let i = 0; i < arr.length; i++) {
     if (arr[i] === target) foundAt.push(i);
@@ -141,8 +150,8 @@ function countOccurrences(stringArray: string[]): { [key: string]: number } {
 }
 
 // Challenge 15: Remove Duplicates
-function removeDuplicates(arr: number[]): number[] {
-  const cleanArr: number[] = [];
+function removeDuplicates(arr: (number | string)[]): (number | string)[] {
+  const cleanArr: (number | string)[] = [];
   for (let i = 0; i < arr.length; i++) {
     if (!cleanArr.includes(arr[i])) cleanArr.push(arr[i]);
   }
@@ -150,13 +159,12 @@ function removeDuplicates(arr: number[]): number[] {
 }
 
 // Challenge 16: Most Frequent
-function mostFrequent(arr: (number | string)[]): number | string {
-  const frequencyObj: Record<string, number> = {};
+function mostFrequent(arr: (number | string)[]): number | string | undefined {
+  const frequencyObj: { [key: string]: number } = {};
   for (let i = 0; i < arr.length; i++) {
     const key = String(arr[i]);
     frequencyObj[key] = (frequencyObj[key] || 0) + 1;
   }
-
   let mostFrequent = Object.keys(frequencyObj)[0];
   for (const key of Object.keys(frequencyObj)) {
     if (frequencyObj[key] > frequencyObj[mostFrequent]) {
@@ -227,3 +235,40 @@ console.log("\n  Test for counting truthy properties-values in an object");
 console.log(countTruthy({ a: 0, b: "hello", c: false, d: 42, e: null })); // 2
 console.log(countTruthy({ a: 0, b: "hello", c: 45, d: 42, e: null })); // 3
 console.log(countTruthy({ a: 0, b: "hello", c: 45, d: NaN, e: null })); // 2
+
+console.log("\n  Test for calculating average using reduce()");
+console.log(getAvg([2, 4, 6, 8])); // 5
+console.log(getAvg([])); // 0
+
+console.log("\n  Test for calculating average without built-in functions");
+console.log(findAvg([10, 20, 30])); // 20
+console.log(findAvg([])); // 0
+
+console.log("\n  Test for linear search");
+console.log(linearSearch([1, 3, 5, 7, 9], 5)); // 2
+console.log(linearSearch([1, 3, 5, 7, 9], 4)); // -1
+
+console.log("\n  Test for reverse linear search");
+console.log(reverseLinearSearch([1, 3, 5, 7, 5, 9], 5)); // 4
+console.log(reverseLinearSearch([1, 3, 5, 7, 9], 10)); // -1
+
+console.log("\n  Test for finding all indices of target in array");
+console.log(linearSearchAll([1, 3, 5, 3, 7, 3], 3)); // [1, 3, 5]
+console.log(linearSearchAll([1, 2, 3, 4], 10)); // []
+
+console.log("\n  Test for counting occurrences of strings in an array");
+console.log(
+  countOccurrences(["apple", "banana", "apple", "pear", "banana", "banana"]),
+); // { apple: 2, banana: 3, pear: 1 }
+console.log(countOccurrences([])); // {}
+
+console.log("\n  Test for removing duplicates from an array");
+console.log(removeDuplicates(["apple", "banana", "apple", "pear", "banana"])); // [ 'apple', 'banana', 'pear' ]
+console.log(removeDuplicates([])); // []
+
+console.log("\n  Test for finding most frequent item in array");
+console.log(
+  mostFrequent(["apple", "banana", "apple", "pear", "banana", "banana"]),
+); // "banana"
+console.log(mostFrequent([1, 2, 2, 3, 4, 2, 5, 1, 1])); // 1
+console.log(mostFrequent([])); // undefined

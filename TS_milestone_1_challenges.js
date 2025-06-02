@@ -1,126 +1,105 @@
 "use strict";
 // Challenge 1: Sum of Two Numbers
 function addition(num1, num2) {
-    return num1 + num2;
+  return num1 + num2;
 }
 // Challenge 2: Convert minutes into seconds
 function convertMinToSecs(numberOfMinutes) {
-    return numberOfMinutes * 60;
+  return numberOfMinutes * 60;
 }
 // Challenge 3: Find Perimeter of a Rectangle
 function findRectanglePerimeter(length, width) {
-    // No negative length or width
-    if (length > 0 && width > 0)
-        return 2 * length + 2 * width;
-    return "Length / Width of a shape cannot be negative";
+  // No negative length or width
+  if (length > 0 && width > 0) return 2 * length + 2 * width;
+  return "Length / Width of a shape cannot be negative";
 }
 // Challenge 4: Check Negative
 function isNegative(num) {
-    return num < 0;
+  return num < 0;
 }
 // Challenge 5: Can Drive
 function canDrive(name, age) {
-    if (age >= 18)
-        return `${name} is old enough to drive`;
-    return `${name} is not old enough to drive`;
+  if (age >= 18) return `${name} is old enough to drive`;
+  return `${name} is not old enough to drive`;
 }
 // Challenge 6: Largest number
 function getLargest(num1, num2, num3) {
-    let largest = num1;
-    if (num2 >= num1 && num2 >= num3)
-        largest = num2;
-    else if (num3 >= num1 && num3 >= num2)
-        largest = num3;
-    return largest;
+  let largest = num1;
+  if (num2 >= num1 && num2 >= num3) largest = num2;
+  else if (num3 >= num1 && num3 >= num2) largest = num3;
+  return largest;
 }
 // Challenge 7: BMI Calculator
 function CalculateBMI(weightInKG, height) {
-    const BMI = weightInKG / (height * height);
-    if (BMI < 18.5)
-        return `Your BMI is ${BMI} - Underweight`;
-    if (BMI >= 18.5 && BMI < 25)
-        return `Your BMI is ${BMI} - Normal Weight`;
-    if (BMI >= 25 && BMI < 30)
-        return `Your BMI is ${BMI} - Overweight`;
-    return `Your BMI is ${BMI} - Obese`;
+  const BMI = weightInKG / (height * height);
+  if (BMI < 18.5) return `Your BMI is ${BMI} - Underweight`;
+  if (BMI >= 18.5 && BMI < 25) return `Your BMI is ${BMI} - Normal Weight`;
+  if (BMI >= 25 && BMI < 30) return `Your BMI is ${BMI} - Overweight`;
+  return `Your BMI is ${BMI} - Obese`;
 }
 // Challenge 8: Greeting Based on Time
 function greetUser(userName, hour) {
-    let greeting = "";
-    if (hour >= 5 && hour <= 11)
-        greeting = "Good morning";
-    else if (hour >= 12 && hour <= 17)
-        greeting = "Good afternoon";
-    else if (hour >= 18 && hour <= 21)
-        greeting = "Good evening";
-    else if ((hour >= 22 && hour <= 23) || (hour >= 0 && hour <= 4))
-        greeting = "Good night";
-    else
-        return "Invalid hour value";
-    return `${greeting}, ${userName}`;
+  let greeting = "";
+  if (hour >= 5 && hour <= 11) greeting = "Good morning";
+  else if (hour >= 12 && hour <= 17) greeting = "Good afternoon";
+  else if (hour >= 18 && hour <= 21) greeting = "Good evening";
+  else if ((hour >= 22 && hour <= 23) || (hour >= 0 && hour <= 4))
+    greeting = "Good night";
+  else return "Invalid hour value";
+  return `${greeting}, ${userName}`;
 }
 // Challenge 9: FizzBuzz
 function FizzBuzzCheck(num) {
-    if (num % 3 === 0 && num % 5 === 0)
-        return "FizzBuzz";
-    if (num % 3 === 0)
-        return "Fizz";
-    if (num % 5 === 0)
-        return "Buzz";
-    return `${num}`;
+  if (num % 3 === 0 && num % 5 === 0) return "FizzBuzz";
+  if (num % 3 === 0) return "Fizz";
+  if (num % 5 === 0) return "Buzz";
+  return `${num}`;
 }
 // Challenge 10: Perimeter 2
 function findPerimeterOfShape(shape, len) {
-    if (shape.toLowerCase() === "s")
-        return len * 4;
-    if (shape.toLowerCase() === "c")
-        return 6.28 * len;
-    return -1; // error code: in case shape is not 'c' or 's'
+  if (shape.toLowerCase() === "s") return len * 4;
+  if (shape.toLowerCase() === "c") return 6.28 * len;
+  return -1; // error code: in case shape is not 'c' or 's'
 }
 // Challenge 11: Sum of Even Numbers
 function sumEvenNumbers(n) {
-    let sum = 0;
-    for (let i = 1; i <= n; i++)
-        sum += i % 2 === 0 ? i : 0;
-    return sum;
+  let sum = 0;
+  for (let i = 1; i <= n; i++) sum += i % 2 === 0 ? i : 0;
+  return sum;
 }
 // Challenge 12: Multiply by Itself
 function powerUp(num, times) {
-    if (num === 0 || times === 0)
-        return 1;
-    let originalNumValue = num;
-    for (let i = times; i > 1; i--)
-        num *= originalNumValue;
-    return num;
+  if (num === 0 || times === 0) return 1;
+  let originalNumValue = num;
+  for (let i = times; i > 1; i--) num *= originalNumValue;
+  return num;
 }
 // Challenge 13: Factorial calculator
 function factorial(n) {
-    let result = 1;
-    if (n >= 0) {
-        for (let p = 1; p <= n; p++)
-            result *= p;
-        return result;
-    }
-    return -1;
+  let result = 1;
+  if (n >= 0) {
+    for (let p = 1; p <= n; p++) result *= p;
+    return result;
+  }
+  return -1;
 }
 // Challenge 14: Multiple Sum
 function sumMultiples(n, divisor) {
-    let sum = 0;
-    for (let p = 1; p <= n; p++)
-        if (p % divisor === 0)
-            sum += p;
-    return sum;
+  let sum = 0;
+  for (let p = 1; p <= n; p++) if (p % divisor === 0) sum += p;
+  return sum;
 }
 // Challenge 15: Sum of Digits
 function sumDigits(n) {
-    let sum = 0, remainder = n;
-    while (remainder > 0) {
-        let currentNumber = remainder % 10;
-        sum += currentNumber;
-        remainder = (n - currentNumber) / 10;
-        n = remainder;
-    }
-    return sum;
+  let sum = 0,
+    remainder = n;
+  while (remainder > 0) {
+    let currentNumber = remainder % 10;
+    sum += currentNumber;
+    remainder = (n - currentNumber) / 10;
+    n = remainder;
+  }
+  return sum;
 }
 /* Testing Bay - testing my code */
 console.log("Test for addition of Two numbers");
@@ -173,7 +152,9 @@ console.log("\n  Test for Factorial Calculator");
 console.log(factorial(1)); // 1
 console.log(factorial(0)); //
 console.log(factorial(6)); //
-console.log("\n  Test for summing nums in range 1 - n that are divisible by a given divisor");
+console.log(
+  "\n  Test for summing nums in range 1 - n that are divisible by a given divisor",
+);
 console.log(sumMultiples(15, 3)); // 45
 console.log(sumMultiples(8, 5)); // 5
 console.log(sumMultiples(4, 1)); // 10
