@@ -28,6 +28,15 @@ function findWinner(canditates) {
   }
   return winners.length === 1 ? winners[0] : winners;
 }
+// Challenge 4: Longest word
+function findLongestWord(wordArray) {
+  var longest = wordArray[0];
+  for (var _i = 0, wordArray_1 = wordArray; _i < wordArray_1.length; _i++) {
+    var word = wordArray_1[_i];
+    longest = word.length > longest.length ? word : longest;
+  }
+  return longest;
+}
 /* Testing Bay - see!!it works */
 console.log(
   "  Test for Summing the positive numbers only in an array of numbers",
@@ -56,3 +65,5 @@ console.log(
     { name: "Billy", votes: 75 },
   ]),
 ); // [ { name: 'Bob', votes: 75 }, { name: 'Billy', votes: 75 } ]
+console.log("\n  Test for finding longest word in an array of words");
+console.log(findLongestWord(["apple", "banana", "pear", "grapefruit"])); // grapefruit

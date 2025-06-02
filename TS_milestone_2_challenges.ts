@@ -35,6 +35,14 @@ function findWinner(canditates: Candidate[]): Candidate[] | Candidate {
   return winners.length === 1 ? winners[0] : winners;
 }
 
+// Challenge 4: Longest word
+function findLongestWord(wordArray: string[]): string {
+  let longest: string = wordArray[0];
+  for (const word of wordArray)
+    longest = word.length > longest.length ? word : longest;
+  return longest;
+}
+
 /* Testing Bay - see!!it works */
 console.log(
   "  Test for Summing the positive numbers only in an array of numbers",
@@ -65,3 +73,6 @@ console.log(
     { name: "Billy", votes: 75 },
   ]),
 ); // [ { name: 'Bob', votes: 75 }, { name: 'Billy', votes: 75 } ]
+
+console.log("\n  Test for finding longest word in an array of words");
+console.log(findLongestWord(["apple", "banana", "pear", "grapefruit"])); // grapefruit
