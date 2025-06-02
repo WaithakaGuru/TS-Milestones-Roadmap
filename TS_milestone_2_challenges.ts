@@ -68,6 +68,16 @@ function sumEvenNumbers(numArray: number[]): number {
   return sum;
 }
 
+// Challenge 8: Difference Between Sum of Even and Odd Numbers
+function differenceEvenOdd(numArray: number[]): number {
+  let difference: number = 0;
+  for (const num of numArray) {
+    if (num % 2 === 0) difference += num;
+    else difference -= num;
+  }
+  return difference;
+}
+
 /* Testing Bay - see!!it works */
 console.log(
   "  Test for Summing the positive numbers only in an array of numbers",
@@ -115,3 +125,9 @@ console.log("\n  Test for summing the Even numbers in an array");
 console.log(sumEvenNumbers([1, 2, 4, 5, 6, 7, 89, 0, 34])); // 46
 console.log(sumEvenNumbers([1, 3, 5, 7, 9, 3])); // 0
 console.log(sumEvenNumbers([1, 3, 5, 7, -4, 3])); // -4
+
+console.log(
+  "\n  Test for  finding differnce between the sum of even and odd numbers in an array",
+);
+console.log(differenceEvenOdd([1, 2, 3, 4, 5, 6])); // 3
+console.log(differenceEvenOdd([1, -4, 3, 18, 6, 9])); // 7

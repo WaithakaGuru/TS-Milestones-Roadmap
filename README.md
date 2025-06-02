@@ -180,8 +180,8 @@ git push origin feature/your-feature-name
 ` ### Guidelines
     --- - Your code should be neat, non-repetitve and Formatted _preferrably using **prettier code formatter** ._ - Provide tests covering most / all of the use cases of your code - Write precise, descriptive commit message answering _what the commit does and how_
 
-                            _Please ensure your code follows the project's coding conventions and includes relevant documentation and tests.
+                                _Please ensure your code follows the project's coding conventions and includes relevant documentation and tests.
 
-                        **Thanks for contributing! 🙌\_**
+                            **Thanks for contributing! 🙌\_**
 
 ---
