@@ -78,6 +78,97 @@ function differenceEvenOdd(numArray: number[]): number {
   return difference;
 }
 
+// Challenge 9: Count Truthy 
+function countTruthy(obj: Object) : number {
+  let truthyValuesCount : number = 0;
+  for(const item of Object.values(obj)){
+    if(item) truthyValuesCount ++;
+  }
+  return truthyValuesCount;
+}
+
+// Challenge 10: Average of Numbers
+
+// Approach One (using reduce())
+function getAvg(numArray: number[]): number {
+  if (numArray.length === 0) return 0;
+  return numArray.reduce((a, b) => a + b, 0) / numArray.length;
+}
+
+// Approach Two (no inbuilt func)
+function findAvg(numArray: number[]): number {
+  if (numArray.length === 0) return 0;
+  let sum = 0;
+  for (let i = 0; i < numArray.length; i++) {
+    sum += numArray[i];
+  }
+  return sum / numArray.length;
+}
+
+// Challenge 11: Linear Search
+function linearSearch(arr: number[] | string[], target: number | string): number {
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] === target) return i;
+  }
+  return -1;
+}
+
+// Challenge 12: Reverse Linear Search
+function reverseLinearSearch(arr: number[] | string[], target: number | string): number {
+  for (let i = arr.length - 1; i >= 0; i--) {
+    if (arr[i] === target) return i;
+  }
+  return -1;
+}
+
+// Challenge 13: Linear Search All Indices
+function linearSearchAll(arr: (number | string)[], target: number | string): number[] {
+  const foundAt: number[] = [];
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] === target) foundAt.push(i);
+  }
+  return foundAt;
+}
+
+// Challenge 14: Count Occurrences
+function countOccurrences(stringArray: string[]): { [key: string]: number } {
+  const count: { [key: string]: number } = {};
+  for (let i = 0; i < stringArray.length; i++) {
+    const item: string = stringArray[i];
+    count.item = (count.item || 0) + 1;
+  }
+  return count;
+}
+
+// Challenge 15: Remove Duplicates
+function removeDuplicates(arr: number[]): number[] {
+  const cleanArr: number[] = [];
+  for (let i = 0; i < arr.length; i++) {
+    if (!cleanArr.includes(arr[i])) cleanArr.push(arr[i]);
+  }
+  return cleanArr;
+}
+
+// Challenge 16: Most Frequent
+function mostFrequent(arr: (number | string)[]): number | string {
+  const frequencyObj: Record<string, number> = {};
+  for (let i = 0; i < arr.length; i++) {
+    const key = String(arr[i]);
+    frequencyObj[key] = (frequencyObj[key] || 0) + 1;
+  }
+
+  let mostFrequent = Object.keys(frequencyObj)[0];
+  for (const key of Object.keys(frequencyObj)) {
+    if (frequencyObj[key] > frequencyObj[mostFrequent]) {
+      mostFrequent = key;
+    }
+  }
+
+  // Convert back to number if applicable
+  const parsed = parseFloat(mostFrequent);
+  return isNaN(parsed) ? mostFrequent : parsed;
+}
+
 /* Testing Bay - see!!it works */
 console.log(
   "  Test for Summing the positive numbers only in an array of numbers",
@@ -131,3 +222,8 @@ console.log(
 );
 console.log(differenceEvenOdd([1, 2, 3, 4, 5, 6])); // 3
 console.log(differenceEvenOdd([1, -4, 3, 18, 6, 9])); // 7
+
+console.log("\n  Test for counting truthy properties-values in an object");
+console.log(countTruthy({ a: 0, b: "hello", c: false, d: 42, e: null })); // 2
+console.log(countTruthy({ a: 0, b: "hello", c: 45, d: 42, e: null })); // 3
+console.log(countTruthy({ a: 0, b: "hello", c: 45, d: NaN, e: null })); // 2
