@@ -52,6 +52,15 @@ function filterByLength(wordArray, minLength) {
   }
   return requiredWords;
 }
+// Challenge 7: Sum of Even Numbers
+function sumEvenNumbers(numArray) {
+  var sum = 0;
+  for (var _i = 0, numArray_1 = numArray; _i < numArray_1.length; _i++) {
+    var num = numArray_1[_i];
+    if (num % 2 === 0) sum += num;
+  }
+  return sum;
+}
 /* Testing Bay - see!!it works */
 console.log(
   "  Test for Summing the positive numbers only in an array of numbers",
@@ -89,3 +98,7 @@ console.log(
 );
 console.log(filterByLength(["cat", "giraffe", "hippo", "dog", "elephant"], 5)); // [ 'giraffe', 'hippo', 'elephant' ]
 console.log(filterByLength(["cat", "giraffe", "hippo", "dog", "elephant"], 4)); // [ 'giraffe', 'hippo', 'elephant' ]
+console.log("\n  Test for summing the Even numbers in an array");
+console.log(sumEvenNumbers([1, 2, 4, 5, 6, 7, 89, 0, 34])); // 46
+console.log(sumEvenNumbers([1, 3, 5, 7, 9, 3])); // 0
+console.log(sumEvenNumbers([1, 3, 5, 7, -4, 3])); // -4
