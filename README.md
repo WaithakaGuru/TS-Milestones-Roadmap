@@ -175,19 +175,15 @@ Contributions are welcome! If you'd like to help improve this project,
     git push origin feature/your-feature-name
     ```
 1.  **Create a Pull Request** from your branch to the main branch of this repository.
-    `bash
-git push origin feature/your-feature-name
-` ### Guidelines
-    --- - Your code should be neat, non-repetitve and Formatted _preferrably using **prettier code formatter** ._ - Provide tests covering most / all of the use cases of your code - Write precise, descriptive commit message answering _what the commit does and how_
+    ```bash
+    git push origin feature/your-feature-name
+    ```
 
-<<<<<<< HEAD
-                                        _Please ensure your code follows the project's coding conventions and includes relevant documentation and tests.
+### Guidelines
+  - _Your code should be neat, non-repetitve and Formatted _preferrably using **prettier code formatter**._ 
+  - Provide tests covering most / all of the use cases of your code - Write precise, descriptive commit message answering __what the commit does and how__
+  - __Please ensure your code follows the project's coding conventions and includes relevant documentation and tests.__
 
-                                    **Thanks for contributing! 🙌\_**
-=======
-                                    _Please ensure your code follows the project's coding conventions and includes relevant documentation and tests.
-
-                                **Thanks for contributing! 🙌\_**
->>>>>>> 94626bf9266ad72bb20787e0971d6acf1849e5b5
+**Thanks for contributing! 🙌**
 
 ---
